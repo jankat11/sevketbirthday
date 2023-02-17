@@ -7,9 +7,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
-
 
 .search {
   text-align: center;
@@ -46,16 +44,16 @@ header {
 
 .searchicon {
   width: 18px;
-  color: gray;
+  color: rgba(128, 128, 128, 0.726);
   position: absolute;
   top: 0.7rem;
   left: 0.8rem;
 }
 
 .center {
-display: flex;
-flex-direction: column;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .container {
@@ -72,6 +70,17 @@ h1 {
   color: #333;
   font-size: 15px;
 }
+
+#button1:hover,
+#button2:hover {
+  box-shadow: 0px 1px 3px rgba(112, 112, 112, 0.452);
+}
+#button1:focus,
+#button2:focus {
+  box-shadow: none;
+  border: solid rgb(0, 119, 255) 1px;
+}
+
 .buttons {
   height: 30px;
   margin-top: 30px;
@@ -116,7 +125,6 @@ a {
   right: 10px;
 }
 
-
 .rotatedLetter {
   transform: rotate(-20deg);
 }
@@ -146,7 +154,6 @@ a {
   width: 65%;
 }
 
-
 .advline {
   display: flex;
   justify-content: space-between;
@@ -166,8 +173,6 @@ form p {
   margin-bottom: 0rem;
 }
 
-
-
 .advbar:focus {
   border: solid #1e90ff 1px;
   outline: none;
@@ -185,6 +190,11 @@ form p {
   align-self: flex-end;
 }
 
+#advbutton:hover {
+  background-color: #2758ecea;
+  border: solid rgb(27, 116, 206) 1px;
+}
+
 .search {
   position: relative;
 }
@@ -193,7 +203,6 @@ form p {
   position: relative;
   bottom: 10px;
 }
-
 
 @media (min-width: 750px) {
   #imageslogo {
@@ -207,13 +216,12 @@ form p {
   }
 }
 
-
 @media (max-width: 750px) {
   #imageslogo {
     position: absolute;
     font-size: 12px;
     top: 54px;
-    left: 59%
+    left: 59%;
   }
   #bar {
     padding-left: 47px;
@@ -248,9 +256,6 @@ form p {
   }
 }
 
-
-
-
 @media (max-width: 660px) {
   .advbar {
     width: 55%;
@@ -268,7 +273,8 @@ form p {
   .advline {
     margin-left: 1rem;
   }
-  #fpage, .advc {
+  #fpage,
+  .advc {
     padding-left: 1rem;
   }
 }
