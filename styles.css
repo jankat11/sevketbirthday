@@ -130,34 +130,48 @@ a {
   margin-left: 10px;
 }
 #fpage {
-  padding-left: 45px;
+  padding-left: 2.8rem;
   height: 40px;
   margin-top: 30px;
   font-size: 13px;
 }
-#line1,
-#line2,
-#line3,
-#line4 {
-  padding-left: 45px;
-  font-size: 15px;
-  height: 40px;
-}
+
 .advbar {
-  margin-left: 65px;
   border: solid #ddd 1px;
   border-top: solid #bbb 1px;
-  width: 45%;
   padding-left: 5px;
+  width: 65%;
 }
+
+
+.advline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 2.8rem;
+}
+
+.advForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-right: 4rem;
+  max-width: 40rem;
+}
+
+form p {
+  margin-bottom: 0rem;
+}
+
+
+
 .advbar:focus {
   border: solid #1e90ff 1px;
   outline: none;
   box-shadow: 1px 1px 1px #b0c4de inset;
 }
 #advbutton {
-  position: relative;
-  left: 52%;
+  width: 10rem;
   background-color: #5179f1;
   color: white;
   padding: 8px;
@@ -165,6 +179,7 @@ a {
   border: solid dodgerblue 1px;
   font-family: arial;
   font-size: 14px;
+  align-self: flex-end;
 }
 
 .search {
@@ -176,22 +191,7 @@ a {
   bottom: 10px;
 }
 
-#bar1 {
-  position: relative;
-  left: 29px;
-}
-#bar2 {
-  position: relative;
-  right: 40px;
-}
-#bar3 {
-  position: relative;
-  left: 2px;
-}
-#bar4 {
-  position: relative;
-  right: 8px;
-}
+
 @media (max-width: 500px) {
   #bar2 {
     position: relative;
@@ -235,8 +235,29 @@ a {
     left: 120px;
   }
 }
-@media (max-width: 500px) {
+
+
+
+
+
+@media (max-width: 660px) {
   .advbar {
-    width: 25%;
+    width: 55%;
+  }
+}
+@media (max-width: 536px) {
+  .advbar {
+    width: 40%;
+  }
+}
+@media (max-width: 450px) {
+  .advForm {
+    margin-right: 1rem;
+  }
+  .advline {
+    margin-left: 1rem;
+  }
+  #fpage, .advc {
+    padding-left: 1rem;
   }
 }
