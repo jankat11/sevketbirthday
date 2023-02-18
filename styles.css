@@ -123,6 +123,7 @@ a {
   position: absolute;
   bottom: 65px;
   right: 10px;
+  border-radius: 50%;
 }
 
 .rotatedLetter {
