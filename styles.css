@@ -280,13 +280,11 @@ form p {
     bottom: 115px;
   }
   .happy-logo {
-    width: 260px;
+    width: 200px;
   }
   .pie {
     position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 60px;
+
   }
 }
 
