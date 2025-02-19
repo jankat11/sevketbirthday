@@ -397,23 +397,23 @@ form p {
 
 
 .b1 {
-  bottom: -80px;
-  animation-delay: 0s;
-  animation: float 8s linear infinite;
+  bottom: -200px;
+  animation-delay: 1s;
+  animation: float 9s linear infinite;
 }
 .b2 {
   bottom: -200px;
-  animation-delay: 0s;
+  animation-delay: 0.4s;
   animation: float 6s linear infinite;
 }
 .b3 {
-  bottom: -100px;
+  bottom: -130px;
   animation: float 10s linear infinite;
-  animation-delay: 0s;
+  animation-delay: 0.7s;
 }
 .b4 {
   bottom: -150px;
-  animation: float 6s linear infinite;
+  animation: float 5.5s linear infinite;
   animation-delay: 2s;
 }
 
@@ -424,7 +424,7 @@ form p {
 }
 .b7 {
   bottom: -200px;
-  animation: float 6s linear infinite;
+  animation: float 6.5s linear infinite;
   animation-delay: 2.2s;
 }
 .b8 {
