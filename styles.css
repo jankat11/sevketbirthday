@@ -53,7 +53,7 @@ header {
   color: rgba(128, 128, 128, 0.726);
   position: absolute;
   top: 0.7rem;
-  left: 0.8rem;
+  left: 3.2rem;
 }
 
 .center {
@@ -128,7 +128,7 @@ a {
   font-size: 18px;
   position: absolute;
   bottom: 65px;
-  right: 10px;
+  right: 45px;
   border-radius: 50%;
 }
 
@@ -315,6 +315,13 @@ form p {
   .happy-logo {
     width: 200px;
   }
+  .searchicon {
+    left: 0.8rem;
+  }
+  #imgbutton {
+    right: 10px;
+  }
+  
 }
 
 @media (max-width: 500px) {
@@ -362,7 +369,7 @@ form p {
 
 /* ----------- BALONLAR ---------- */
 
-/* Balonlar kapsayıcısı */
+
 .balloon-container {
   position: fixed;
   top: 0;
@@ -380,6 +387,88 @@ form p {
 
 .balloon {
   position: absolute;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.balloon img {
+  width: 50px;
+}
+
+
+.b1 {
+  bottom: -50px;
+  animation-delay: 0s;
+  animation: float 8s linear infinite;
+}
+.b2 {
+  bottom: -200px;
+  background: radial-gradient(circle at 30% 30%, #5eafff, #3d8bd9);
+  animation-delay: 0s;
+  animation: float 6s linear infinite;
+}
+.b3 {
+  bottom: -100px;
+  animation: float 10s linear infinite;
+  animation-delay: 0s;
+  background: radial-gradient(circle at 30% 30%, #5eff78, #3dd943);
+}
+.b4 {
+  bottom: -150px;
+  animation: float 6s linear infinite;
+  animation-delay: 2s;
+  background: radial-gradient(circle at 30% 30%, #ffb45e, #d98c43);
+}
+
+/* Temel balon stili */
+.b6 {
+  animation: float 8s linear infinite;
+  bottom: -130px;
+  animation-delay: 2s;
+  transform: translateX(10%);
+  background: radial-gradient(circle at 30% 30%, #ff5eaa, #d9438c);
+}
+.b7 {
+  bottom: -200px;
+  animation: float 6s linear infinite;
+  animation-delay: 2.2s;
+  background: radial-gradient(circle at 30% 30%, #5eff78, #3dd943);
+}
+.b8 {
+  bottom: -100px;
+  animation: float 10s linear infinite;
+  animation-delay: 3s;
+  background: radial-gradient(circle at 30% 30%, #ff5eaa, #d9438c);
+}
+.b9 {
+  bottom: -150px;
+  animation-delay: 1s;
+  animation: float 8s linear infinite;
+  background: radial-gradient(circle at 30% 30%, #ff5e5e, #d94343);
+}
+.b10 {
+  animation: float 8s linear infinite;
+  animation-delay: 1s;
+  bottom: -100px;
+  background: radial-gradient(circle at 30% 30%, #ffb45e, #d98c43);
+}
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-150vh); 
+  }
+}
+
+
+
+
+
+/* .balloon {
+  position: absolute;
   width: 50px;
   height: 70px;
   border-radius: 50% 50% 45% 45%;
@@ -389,7 +478,7 @@ form p {
   z-index: 100;
 }
 
-/* Balon ipi */
+
 .balloon::after {
   content: "";
   position: absolute;
@@ -402,52 +491,52 @@ form p {
 }
 
 .b1 {
-  bottom: -250px;
+  bottom: -50px;
   background: radial-gradient(circle at 30% 30%, #ff5e5e, #d94343);
   animation-delay: 0s;
   animation: float 8s linear infinite;
 }
 .b2 {
-  bottom: -300px;
+  bottom: -200px;
   background: radial-gradient(circle at 30% 30%, #5eafff, #3d8bd9);
   animation-delay: 0s;
   animation: float 6s linear infinite;
 }
 .b3 {
-  bottom: -200px;
+  bottom: -100px;
   animation: float 10s linear infinite;
   animation-delay: 0s;
   background: radial-gradient(circle at 30% 30%, #5eff78, #3dd943);
 }
 .b4 {
-  bottom: -250px;
+  bottom: -150px;
   animation: float 6s linear infinite;
   animation-delay: 2s;
   background: radial-gradient(circle at 30% 30%, #ffb45e, #d98c43);
 }
 
-/* Temel balon stili */
+
 .b6 {
   animation: float 8s linear infinite;
-  bottom: -250px;
+  bottom: -130px;
   animation-delay: 2s;
   transform: translateX(10%);
   background: radial-gradient(circle at 30% 30%, #ff5eaa, #d9438c);
 }
 .b7 {
-  bottom: -300px;
+  bottom: -200px;
   animation: float 6s linear infinite;
   animation-delay: 2.2s;
   background: radial-gradient(circle at 30% 30%, #5eff78, #3dd943);
 }
 .b8 {
-  bottom: -200px;
+  bottom: -100px;
   animation: float 10s linear infinite;
   animation-delay: 3s;
   background: radial-gradient(circle at 30% 30%, #ff5eaa, #d9438c);
 }
 .b9 {
-  bottom: -250px;
+  bottom: -150px;
   animation-delay: 1s;
   animation: float 8s linear infinite;
   background: radial-gradient(circle at 30% 30%, #ff5e5e, #d94343);
@@ -455,16 +544,6 @@ form p {
 .b10 {
   animation: float 8s linear infinite;
   animation-delay: 1s;
-  bottom: -200px;
+  bottom: -100px;
   background: radial-gradient(circle at 30% 30%, #ffb45e, #d98c43);
-}
-
-/* Balonun aşağıdan yukarıya hareket animasyonu */
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-150vh); /* Balon tamamen yukarı çıkacak */
-  }
-}
+} */
