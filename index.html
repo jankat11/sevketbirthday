@@ -68,7 +68,7 @@
             </div>
           </form>
         </div>
-        <div class="happy">
+        <div id="happy" class="happy" style="display: none">
           <img src="./pie.png" class="pie" />
           <img src="./happybirthday.png" class="happy-logo" />
         </div>
@@ -88,37 +88,29 @@
       <div class="balloon b9" style="left: 70%"></div>
       <div class="balloon b10" style="left: 90%"></div>
     </div>
+
     <script>
-      /*       document
-        .querySelector("#searchicon")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-        }); */
+      const today = new Date();
+      const day = today.getDate();
+      const month = today.getMonth() + 1; 
 
-      document.querySelectorAll(".balloon").forEach(function (balloon) {
-        balloon.addEventListener("click", function (e) {
-          // Balonun konumunu referans alabilmek için bounding rect alıyoruz
-          const rect = balloon.getBoundingClientRect();
-          // Tıklanan noktanın balon içerisindeki koordinatlarını hesapla
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
+      if (day === 19 && month === 2) {
+        document.querySelectorAll(".balloon-container").forEach((container) => {
+          container.style.display = "block"; 
+        });
 
-          // Explosion elementi oluştur
-          const explosion = document.createElement("div");
-          explosion.className = "explosion";
-          explosion.style.left = x + "px";
-          explosion.style.top = y + "px";
-
-          // Balon elementine explosion elementini ekle
-          balloon.appendChild(explosion);
-
-          // Animasyon bitince explosion elementini kaldır
-          explosion.addEventListener("animationend", function () {
+        const happyPhoto = document.getElementById("happy");
+        happyPhoto.style.display = "block";
+        document.querySelectorAll(".balloon").forEach((balloon) => {
+          balloon.addEventListener("click", function () {
             balloon.remove();
-            explosion.remove();
           });
         });
-      });
+      } else {
+        document.querySelectorAll(".balloon-container").forEach((container) => {
+          container.remove();
+        });
+      }
     </script>
   </body>
 </html>
