@@ -403,7 +403,6 @@ form p {
 }
 .b2 {
   bottom: -200px;
-  background: radial-gradient(circle at 30% 30%, #5eafff, #3d8bd9);
   animation-delay: 0s;
   animation: float 6s linear infinite;
 }
@@ -411,46 +410,37 @@ form p {
   bottom: -100px;
   animation: float 10s linear infinite;
   animation-delay: 0s;
-  background: radial-gradient(circle at 30% 30%, #5eff78, #3dd943);
 }
 .b4 {
   bottom: -150px;
   animation: float 6s linear infinite;
   animation-delay: 2s;
-  background: radial-gradient(circle at 30% 30%, #ffb45e, #d98c43);
 }
 
-/* Temel balon stili */
 .b6 {
   animation: float 8s linear infinite;
   bottom: -130px;
   animation-delay: 2s;
-  transform: translateX(10%);
-  background: radial-gradient(circle at 30% 30%, #ff5eaa, #d9438c);
 }
 .b7 {
   bottom: -200px;
   animation: float 6s linear infinite;
   animation-delay: 2.2s;
-  background: radial-gradient(circle at 30% 30%, #5eff78, #3dd943);
 }
 .b8 {
   bottom: -100px;
   animation: float 10s linear infinite;
   animation-delay: 3s;
-  background: radial-gradient(circle at 30% 30%, #ff5eaa, #d9438c);
 }
 .b9 {
   bottom: -150px;
   animation-delay: 1s;
   animation: float 8s linear infinite;
-  background: radial-gradient(circle at 30% 30%, #ff5e5e, #d94343);
 }
 .b10 {
   animation: float 8s linear infinite;
   animation-delay: 1s;
   bottom: -100px;
-  background: radial-gradient(circle at 30% 30%, #ffb45e, #d98c43);
 }
 
 
