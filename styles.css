@@ -41,6 +41,11 @@ header {
 #google img {
   width: 52%;
   user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
 }
 
 .searchicon {
@@ -249,6 +254,11 @@ form p {
   margin-top: 2rem;
   position: relative;
   user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
 }
 
 .pie {
@@ -460,5 +470,3 @@ form p {
     transform: translateY(-150vh); /* Balon tamamen yukarı çıkacak */
   }
 }
-
- 
