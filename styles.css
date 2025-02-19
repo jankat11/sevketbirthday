@@ -40,6 +40,7 @@ header {
 
 #google img {
   width: 52%;
+  user-select: none;
 }
 
 .searchicon {
@@ -215,6 +216,7 @@ form p {
     url("nazar.jpg");
   background-size: contain;
   margin-left: 0.1rem;
+  user-select: none;
 }
 
 .nazarCont {
@@ -246,6 +248,7 @@ form p {
   margin: auto;
   margin-top: 3.5rem;
   position: relative;
+  user-select: none;
 }
 
 .pie {
@@ -253,6 +256,7 @@ form p {
   top: 10px;
   left: 10px;
   width: 50px;
+  user-select: none;
 }
 
 @media (min-width: 750px) {
@@ -372,13 +376,16 @@ form p {
   height: 70px;
   border-radius: 50% 50% 45% 45%;
   opacity: 1;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 100;
 }
 
 /* Balon ipi */
 .balloon::after {
   content: "";
   position: absolute;
-  top: 70px; 
+  top: 70px;
   left: 50%;
   width: 0.8px;
   height: 40px;
@@ -444,7 +451,6 @@ form p {
   background: radial-gradient(circle at 30% 30%, #ffb45e, #d98c43);
 }
 
-
 /* Balonun aşağıdan yukarıya hareket animasyonu */
 @keyframes float {
   0% {
@@ -452,5 +458,30 @@ form p {
   }
   100% {
     transform: translateY(-150vh); /* Balon tamamen yukarı çıkacak */
+  }
+}
+
+/* Explosion efektinin temel stili */
+.explosion {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #f3f3f3 0%, #aaaaaa7a 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 1;
+  animation: explode 0.08s forwards;
+}
+
+/* Explosion keyframes animasyonu */
+@keyframes explode {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
   }
 }
