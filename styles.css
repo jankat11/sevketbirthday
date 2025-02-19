@@ -40,6 +40,7 @@ header {
 
 #google img {
   width: 52%;
+  user-select: none;
 }
 
 .searchicon {
@@ -205,13 +206,17 @@ form p {
   bottom: 10px;
 }
 
-
 .nazar {
   width: 1rem;
   height: 1rem;
-  background: linear-gradient(rgba(255, 255, 255, 0.342), rgba(255, 255, 255, 0.329)), url("nazar.jpg");
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.342),
+      rgba(255, 255, 255, 0.329)
+    ),
+    url("nazar.jpg");
   background-size: contain;
   margin-left: 0.1rem;
+  user-select: none;
 }
 
 .nazarCont {
@@ -222,19 +227,37 @@ form p {
   left: 1rem;
 }
 
-
 .dateInfo {
   font-size: 0.8rem;
   color: #4a4b4a;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin-top: 1rem;
-  background-image: linear-gradient(to right, #4286f488, #db453785, #f4b30086, #4286f480);
+  background-image: linear-gradient(
+    to right,
+    #4286f488,
+    #db453785,
+    #f4b30086,
+    #4286f480
+  );
   border-radius: 10px;
   padding-right: 0.4rem;
   padding-left: 0.4rem;
 }
 
+.happy {
+  margin: auto;
+  margin-top: 3.5rem;
+  position: relative;
+  user-select: none;
+}
 
+.pie {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  user-select: none;
+}
 
 @media (min-width: 750px) {
   #imageslogo {
@@ -245,6 +268,15 @@ form p {
     position: relative;
     left: 125px;
     bottom: 115px;
+  }
+  .happy-logo {
+    width: 260px;
+  }
+  .pie {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 60px;
   }
 }
 
@@ -272,6 +304,9 @@ form p {
     position: relative;
     bottom: 40px;
   }
+  .happy-logo {
+    width: 200px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -286,11 +321,17 @@ form p {
     position: relative;
     bottom: 80px;
   }
+  .happy-logo {
+    width: 200px;
+  }
 }
 
 @media (max-width: 660px) {
   .advbar {
     width: 55%;
+  }
+  .happy-logo {
+    width: 200px;
   }
 }
 @media (max-width: 536px) {
@@ -308,5 +349,139 @@ form p {
   #fpage,
   .advc {
     padding-left: 1rem;
+  }
+}
+
+/* ----------- BALONLAR ---------- */
+
+/* Balonlar kapsayıcısı */
+.balloon-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.bc2 {
+  left: 40px;
+}
+
+.balloon {
+  position: absolute;
+  width: 50px;
+  height: 70px;
+  border-radius: 50% 50% 45% 45%;
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 100;
+}
+
+/* Balon ipi */
+.balloon::after {
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  width: 0.8px;
+  height: 40px;
+  background: #999;
+  transform: translateX(-50%);
+}
+
+.b1 {
+  bottom: -250px;
+  background: radial-gradient(circle at 30% 30%, #ff5e5e, #d94343);
+  animation-delay: 0s;
+  animation: float 8s linear infinite;
+}
+.b2 {
+  bottom: -300px;
+  background: radial-gradient(circle at 30% 30%, #5eafff, #3d8bd9);
+  animation-delay: 0s;
+  animation: float 6s linear infinite;
+}
+.b3 {
+  bottom: -200px;
+  animation: float 10s linear infinite;
+  animation-delay: 0s;
+  background: radial-gradient(circle at 30% 30%, #5eff78, #3dd943);
+}
+.b4 {
+  bottom: -250px;
+  animation: float 6s linear infinite;
+  animation-delay: 2s;
+  background: radial-gradient(circle at 30% 30%, #ffb45e, #d98c43);
+}
+
+/* Temel balon stili */
+.b6 {
+  animation: float 8s linear infinite;
+  bottom: -250px;
+  animation-delay: 2s;
+  transform: translateX(10%);
+  background: radial-gradient(circle at 30% 30%, #ff5eaa, #d9438c);
+}
+.b7 {
+  bottom: -300px;
+  animation: float 6s linear infinite;
+  animation-delay: 2.2s;
+  background: radial-gradient(circle at 30% 30%, #5eff78, #3dd943);
+}
+.b8 {
+  bottom: -200px;
+  animation: float 10s linear infinite;
+  animation-delay: 3s;
+  background: radial-gradient(circle at 30% 30%, #ff5eaa, #d9438c);
+}
+.b9 {
+  bottom: -250px;
+  animation-delay: 1s;
+  animation: float 8s linear infinite;
+  background: radial-gradient(circle at 30% 30%, #ff5e5e, #d94343);
+}
+.b10 {
+  animation: float 8s linear infinite;
+  animation-delay: 1s;
+  bottom: -200px;
+  background: radial-gradient(circle at 30% 30%, #ffb45e, #d98c43);
+}
+
+/* Balonun aşağıdan yukarıya hareket animasyonu */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-150vh); /* Balon tamamen yukarı çıkacak */
+  }
+}
+
+/* Explosion efektinin temel stili */
+.explosion {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #f3f3f3 0%, #aaaaaa7a 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 1;
+  animation: explode 0.08s forwards;
+}
+
+/* Explosion keyframes animasyonu */
+@keyframes explode {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
   }
 }

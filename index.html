@@ -4,17 +4,17 @@
     <title>Şevket Sefa | Search Engine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-    crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
     />
     <link href="styles.css" rel="stylesheet" />
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" />
   </head>
   <body>
     <header>
@@ -25,18 +25,32 @@
         </nav>
       </div>
     </header>
-    
+
     <main>
       <div class="center">
         <div id="google">
-          <img src="sevketlogo-nobg.png" alt="smt went wrong with sevket engine:(" />
+          <img
+            src="sevketlogo-nobg.png"
+            alt="smt went wrong with sevket engine:("
+          />
         </div>
         <div class="formsection">
           <form class="search" action="https://google.com/search">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 searchicon">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 searchicon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+              />
             </svg>
-            
+
             <input autofocus id="bar" type="text" name="q" />
             <input type="hidden" value="Google Search" />
             <div class="buttons">
@@ -54,15 +68,57 @@
             </div>
           </form>
         </div>
+        <div class="happy">
+          <img src="./pie.png" class="pie" />
+          <img src="./happybirthday.png" class="happy-logo" />
+        </div>
       </div>
     </main>
 
+    <div class="balloon-container">
+      <div class="balloon b1" style="left: 10%"></div>
+      <div class="balloon b2" style="left: 30%"></div>
+      <div class="balloon b3" style="left: 50%"></div>
+      <div class="balloon b4" style="left: 70%"></div>
+    </div>
+    <div class="balloon-container bc2">
+      <div class="balloon b6" style="left: 10%"></div>
+      <div class="balloon b7" style="left: 30%"></div>
+      <div class="balloon b8" style="left: 50%"></div>
+      <div class="balloon b9" style="left: 70%"></div>
+      <div class="balloon b10" style="left: 90%"></div>
+    </div>
     <script>
-      document
+      /*       document
         .querySelector("#searchicon")
         .addEventListener("click", function (e) {
           e.preventDefault();
+        }); */
+
+      document.querySelectorAll(".balloon").forEach(function (balloon) {
+        balloon.addEventListener("click", function (e) {
+          // Balonun konumunu referans alabilmek için bounding rect alıyoruz
+          const rect = balloon.getBoundingClientRect();
+          // Tıklanan noktanın balon içerisindeki koordinatlarını hesapla
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          // Explosion elementi oluştur
+          const explosion = document.createElement("div");
+          explosion.className = "explosion";
+          explosion.style.left = x + "px";
+          explosion.style.top = y + "px";
+
+          // Balon elementine explosion elementini ekle
+          balloon.appendChild(explosion);
+
+          // Animasyon bitince explosion elementini kaldır
+          explosion.addEventListener("animationend", function () {
+            balloon.remove();
+            explosion.remove();
+          });
         });
+      });
     </script>
   </body>
 </html>
