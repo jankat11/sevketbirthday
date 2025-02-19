@@ -428,7 +428,7 @@ form p {
   animation-delay: 2.2s;
 }
 .b8 {
-  bottom: -100px;
+  bottom: -200px;
   animation: float 10s linear infinite;
   animation-delay: 3s;
 }
